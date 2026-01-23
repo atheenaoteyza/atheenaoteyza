@@ -1,7 +1,7 @@
-export default function () {
+export default function ProfileCard() {
   return (
     <>
-      <div className="h-[50%] p-[.5rem] mt-2 bg-background rounded-xl">
+      <div className="h-full p-[.5rem] bg-gray-200 dark:bg-[hsl(0,0%,0%)] rounded-xl">
         hello
       </div>
     </>

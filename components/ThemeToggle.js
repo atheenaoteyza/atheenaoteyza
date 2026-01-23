@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
@@ -20,7 +19,10 @@ export default function ThemeToggle() {
   };
 
   return (
-    <button onClick={toggle} className=" p-1 border rounded">
+    <button
+      onClick={toggle}
+      className=" p-1 rounded cursor-pointer dark:bg-[#161b22]"
+    >
       {isDark ? "🌙" : "☀️"}
     </button>
   );
