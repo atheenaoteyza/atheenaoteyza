@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* ✅ Light Mode: Solid White */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: hsl(240, 3%, 13%);
 }
 
 /* CHANGE THIS LINE (Use :is instead of :where) */
@@ -16,12 +17,18 @@
 }
 
 :root.dark {
-  --background: #0a0a0a;
+  /* ❌ OLD: #121212bd (The 'bd' made it transparent!) */
+  /* ✅ NEW: #111827 (This is Tailwind's Gray-900 - Solid & Clean) */
+  --background: hsl(240, 2%, 11%);
   --foreground: #ededed;
 }
 
+/* You don't need @layer base. Just set it here directly. */
 body {
-  background: var(--background);
+  background: var(--background); /* This now uses the solid colors above */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+
+  /* Optional: This stops the 'rubber band' bounce effect completely */
+  overscroll-behavior-y: none;
 }
