@@ -32,3 +32,58 @@ body {
   /* Optional: This stops the 'rubber band' bounce effect completely */
   overscroll-behavior-y: none;
 }
+
+@layer utilities {
+  .scroll-shadows {
+    --shadow-bg: var(--background);
+
+    /* ❌ OLD: --shadow-color: rgba(0, 0, 0, 0.2); */
+    /* ✅ NEW: Default is light. We override it for dark mode below. */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    background:
+      /* Top Cover */
+      linear-gradient(var(--shadow-bg) 30%, rgba(255, 255, 255, 0)) center top,
+      /* Bottom Cover */
+        linear-gradient(rgba(255, 255, 255, 0), var(--shadow-bg) 70%) center
+        bottom,
+      /* Top Shadow */
+        radial-gradient(
+          farthest-side at 50% 0,
+          var(--shadow-color),
+          rgba(0, 0, 0, 0)
+        )
+        center top,
+      /* Bottom Shadow */
+        radial-gradient(
+          farthest-side at 50% 100%,
+          var(--shadow-color),
+          rgba(0, 0, 0, 0)
+        )
+        center bottom;
+
+    background-size:
+      100% 40px,
+      100% 40px,
+      100% 14px,
+      100% 14px;
+    background-attachment: local, local, scroll, scroll;
+    background-repeat: no-repeat;
+  }
+
+  /* 👇 CRITICAL FIX: Make the shadow strong in dark mode */
+  .dark .scroll-shadows {
+    --shadow-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
