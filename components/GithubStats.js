@@ -3,7 +3,7 @@ import { useStats } from "@/context/StatsContext";
 export default function GithubStatistics() {
   const { stats } = useStats();
   return (
-    <div className="flex p-[.2rem] bg-gray-200 dark:bg-[hsl(0,0%,0%)] rounded-xl gap-[2px]">
+    <div className="flex p-[.2rem] bg-gray-200 dark:bg-[hsl(0,0%,0%)] rounded-xl gap-[2px] lg:h-[8rem]">
       {/* GitHub Icon */}
       <div className="flex items-center m-4 ">
         <svg
@@ -20,7 +20,7 @@ export default function GithubStatistics() {
         <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider text-center">
           Repositories
         </h3>
-        <p className="text-4xl font-black mt-2 text-center">{stats.repos}</p>
+        <p className="text-2xl font-black mt-2 text-center">{stats.repos}</p>
       </div>
 
       {/* Commits */}
@@ -28,7 +28,7 @@ export default function GithubStatistics() {
         <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider text-center">
           Commits (Year)
         </h3>
-        <p className="text-4xl font-black mt-2 text-center">{stats.commits}</p>
+        <p className="text-2xl font-black mt-2 text-center">{stats.commits}</p>
       </div>
 
       {/* Pull Requests */}
@@ -36,7 +36,7 @@ export default function GithubStatistics() {
         <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider text-center">
           Pull Requests
         </h3>
-        <p className="text-4xl font-black mt-2 text-center">{stats.prs}</p>
+        <p className="text-2xl font-black mt-2 text-center">{stats.prs}</p>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "../components/Header";
 import LeftSection from "@/components/LeftSection";
@@ -19,10 +18,13 @@ export default function Home({ stats, calendarData }) {
   return (
     <StatsProvider stats={stats} calendarData={calendarData}>
       <div
-        className={`${geistSans.className} ${geistMono.className} font-sans flex justify-center min-w-ful h-full sm:items-start `}
+        className={`${geistSans.className} ${geistMono.className} font-sans flex min-w-ful h-[100vh] sm:items-start overflow-hidden`}
       >
-        <main className="flex p-[1rem] w-[100%] self-stretch items-center h-full rounded-xl">
-          <LeftSection />
+        <main className="flex w-[100%] rounded-xl m-[1rem]">
+          <div>
+            <LeftSection />
+          </div>
+          {/* <div className="w-[100%] h-[100vh] overflow-y-auto flex flex-col gap-2 p-2 rounded-xl border "></div> */}
         </main>
       </div>
     </StatsProvider>
