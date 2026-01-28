@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "../components/Header";
 import LeftSection from "@/components/LeftSection";
 import { getGitHubStats } from "@/lib/github";
 import { StatsProvider } from "@/context/StatsContext";
+import RighSection from "@/components/RightSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,15 +17,24 @@ const geistMono = Geist_Mono({
 export default function Home({ stats, calendarData }) {
   return (
     <StatsProvider stats={stats} calendarData={calendarData}>
+      {/* 1. flex-col: Stack vertically on mobile.
+          2. lg:flex-row: Side-by-side on large screens.
+          3. overflow-hidden & h-screen: Removed on mobile to allow scrolling.
+      */}
       <div
-        className={`${geistSans.className} ${geistMono.className} font-sans flex min-w-ful h-[100vh] sm:items-start overflow-hidden`}
+        className={`${geistSans.className} ${geistMono.className} font-sans flex flex-col lg:flex-row w-full lg:h-screen lg:overflow-hidden bg-[var(--background)] p-4 gap-2`}
       >
-        <main className="flex w-[100%] rounded-xl m-[1rem]">
-          <div>
-            <LeftSection />
-          </div>
-          {/* <div className="w-[100%] h-[100vh] overflow-y-auto flex flex-col gap-2 p-2 rounded-xl border "></div> */}
-        </main>
+        {/* SIDEBAR: 
+            Full width on mobile, fixed width on desktop.
+        */}
+        <aside className="w-full lg:w-[450px] flex-shrink-0">
+          <LeftSection />
+        </aside>
+
+        {/* MAIN CONTENT: 
+            Goes below on mobile, to the right on desktop.
+        */}
+        <RighSection />
       </div>
     </StatsProvider>
   );

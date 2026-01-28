@@ -6,21 +6,21 @@ import TechStack from "./TechStack";
 
 export default function LeftSection() {
   return (
-    // 1. OUTER CONTAINER
-    // ❌ REMOVED: dark:bg-zinc-900
-    // ✅ ADDED: bg-[var(--background)] (Forces it to match your CSS variable exactly)
-    <div className="h-[99vh] w-[100%] lg:w-[650px] shadow-lg px-2 pb-4 bg-[var(--background)] flex flex-col rounded-xl lg:overflow-hidden">
-      {/* 2. INNER CONTAINER */}
-      <div className="flex-1 h-full overflow-y-auto flex flex-col gap-2 rounded-xl no-scrollbar scroll-shadows">
-        <Header />
+    /* Change lg:h-[99vh] to lg:h-full. 
+       Since the parent is h-screen minus padding, h-full will fit perfectly. 
+    */
+    <div className="w-full lg:w-full lg:h-full bg-[var(--background)] shadow-lg px-2 pb-4 flex flex-col rounded-xl lg:overflow-hidden">
+      <div className="lg:flex-1 lg:h-full lg:overflow-y-auto flex flex-col no-scrollbar custom-scroll-shadows">
+        <header className="sticky mb-[.6rem]">
+          <Header />
+        </header>
 
-        <div>
+        <section className="space-y-2">
           <ProfileCard />
-        </div>
-
-        <GithubStatistics />
-        <TechStack />
-        <ContributionChart />
+          <GithubStatistics />
+          <TechStack />
+          <ContributionChart />
+        </section>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
-    <header className="flex px-[.2rem] py-[.2rem] pl-[1rem] lg:h-[2.5rem] bg-gray-200 dark:bg-[hsl(0,0%,0%)] justify-between rounded-xl">
+    <header className="border border-zinc-200 dark:border-zinc-800 flex bg-white dark:bg-[hsl(0,0%,0%)] justify-between rounded-xl p-1">
       {" "}
       <h1 className="text-l font-bold p-1 flex items-center gap-2">
         <svg
@@ -16,7 +16,7 @@ export default function Header() {
         Oteyza, Atheena Luis
       </h1>
       <div className="flex gap-1">
-        <button className="p-1 rounded dark:bg-[#161b22] cursor-pointer">
+        <button className="px-4 py-[.35rem] rounded dark:bg-[#161b22] cursor-pointer">
           View Resume
         </button>
         <ThemeToggle />
