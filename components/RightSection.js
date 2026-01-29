@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-
+import { MOCK_PROJECTS } from "./MockProjects";
+import ProjectGrid from "./ProjectGrid";
+import Certifications from "./Certifications";
 const tabs = [
   { id: "projects", label: "Projects" },
   { id: "certifications", label: "Certifications" },
@@ -43,7 +45,7 @@ export default function RightSection() {
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 rounded-xl overflow-hidden bg-white dark:bg-black border border-zinc-300 dark:border-zinc-800 shadow-lg relative">
+      <div className="flex-1 rounded-xl overflow-hidden overflow-y-auto bg-white dark:bg-black border border-zinc-300 dark:border-zinc-800 shadow-lg relative">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -54,10 +56,16 @@ export default function RightSection() {
             className="h-full w-full p-6"
           >
             {activeTab === "projects" && (
-              <div className="dark:text-white">Project Grid goes here...</div>
+              <div className="flex flex-col gap-6">
+                {MOCK_PROJECTS.map((project) => (
+                  <ProjectGrid key={project.id} project={project} />
+                ))}
+              </div>
             )}
             {activeTab === "certifications" && (
-              <div className="dark:text-white">Certs list goes here...</div>
+              <div className="dark:text-white">
+                <Certifications />
+              </div>
             )}
           </motion.div>
         </AnimatePresence>
