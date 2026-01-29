@@ -5,6 +5,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
+🚀 **Live Demo:** [https://atheenaoteyza.vercel.app](https://atheenaoteyza.vercel.app/)
+
 A "future-proof" engineering portfolio showcasing high-performance software solutions. This platform demonstrates my ability to architect scalable solutions by bridging modern frontend frameworks (Next.js) with robust enterprise backends (.NET/C#).
 
 > *"Building scalable, efficient systems for the modern web."*
