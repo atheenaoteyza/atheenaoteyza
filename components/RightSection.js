@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { MOCK_PROJECTS } from "./MockProjects";
 import ProjectGrid from "./ProjectGrid";
 import Certifications from "./Certifications";
+import ContactSection from "./ContactSection";
 const tabs = [
   { id: "projects", label: "Projects" },
   { id: "certifications", label: "Certifications" },
@@ -65,6 +66,12 @@ export default function RightSection() {
             {activeTab === "certifications" && (
               <div className="dark:text-white">
                 <Certifications />
+              </div>
+            )}
+
+            {activeTab === "contact" && (
+              <div className="max-w-4xl mx-auto">
+                <ContactSection />
               </div>
             )}
           </motion.div>
