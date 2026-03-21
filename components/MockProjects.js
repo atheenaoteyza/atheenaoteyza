@@ -1,7 +1,7 @@
 export const MOCK_PROJECTS = [
   {
     id: 1,
-    title: "alpha-saas",
+    title: "Deep Focus",
     description:
       "A minimal LoFi focus app featuring YouTube music integration, Pomodoro timers, and streak tracking. Built with a focus on seamless user experience and modern authentication.",
     TechStack: [
@@ -14,7 +14,7 @@ export const MOCK_PROJECTS = [
       { name: "react-player" },
     ],
     repoUrl: "https://github.com/atheenaoteyza/alpha-saas",
-    demoUrl: "#",
+    demoUrl: "https://atheenaoteyza.vercel.app/",
   },
   {
     id: 2,
