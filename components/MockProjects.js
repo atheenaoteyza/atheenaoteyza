@@ -14,7 +14,7 @@ export const MOCK_PROJECTS = [
       { name: "react-player" },
     ],
     repoUrl: "https://github.com/atheenaoteyza/alpha-saas",
-    demoUrl: "https://atheenaoteyza.vercel.app/",
+    demoUrl: "https://deep-focus-lofi.vercel.app/dashboard",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const MOCK_PROJECTS = [
       { name: "Express" },
     ],
     repoUrl: "https://github.com/atheenaoteyza/InvoiceByte",
-    demoUrl: "#",
+    demoUrl: "https://invoicebyte.vercel.app/",
   },
   {
     id: 3,
