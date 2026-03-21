@@ -1,7 +1,7 @@
 export const MOCK_PROJECTS = [
   {
     id: 1,
-    title: "Deep-Work",
+    title: "Deep Focus",
     description:
       "A minimal LoFi focus app featuring YouTube music integration, Pomodoro timers, and streak tracking. Built with a focus on seamless user experience and modern authentication.",
     TechStack: [
